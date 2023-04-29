@@ -10,9 +10,27 @@ public class StringApplications {
 
 
         char[] newArray = {'a','b','c'};
-        String s1= "I love Java";
-        s1 = s1.concat(" from 2014");
-        System.out.println(s1);
-        System.out.println(s1.length());
+        String s3= "I love Java";
+        s3 = s3.concat(" from 2014");
+        System.out.println(s3);
+        System.out.println(s3.length());
+
+
+
+
+        String s1 = new String("I love Java");
+        String s2 = new String("I love Java");
+
+//        if(!s1.equals(s2)){
+//            System.out.println("We are having same memory address so we are same");
+//        }
+//        else{
+//            System.out.println("We are different");
+//        }
+        //love J
+        System.out.println(s1.substring(2,8));
+
+        System.out.println(s1.split(" "));
+
     }
 }
