@@ -1,3 +1,3 @@
-public interface TimsConsumable extends TimsItem {
+public interface TimsConsumable extends TimItem {
     int getCalories();
 }

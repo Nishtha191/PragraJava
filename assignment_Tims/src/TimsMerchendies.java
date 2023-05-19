@@ -1,3 +1,3 @@
-public interface TimsMerchendies extends TimsItem{
+public interface TimsMerchendies extends TimItem{
         String getFeatures();
 }
