@@ -1,4 +1,7 @@
 public class Wrap implements TimsConsumable{
+    public String toString(){
+        return "Wrap";
+    }
     @Override
     public int getCalories() {
         return 350;

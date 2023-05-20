@@ -153,23 +153,69 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println(" Done with ordering");
-                    System.out.println("No. of items ordering : " + (orderCounter++));
-                    System.out.println("Total Price is : " + totalPrice);
-                    System.out.println("1. Continue Checkout Online");
-                    System.out.println("2. Checkout At Counter");
-                    choice = sc.nextInt();
-                    switch (choice) {
-                        case 1:
-                            System.out.println("Welcome to Online Payment");
-                            break;
-                        case 2:
-                            System.out.println("Thank you for selecting at counter payment. \n Your order will be ready at pick up counter shortly! \n Your total is : " + totalPrice);
-                        default:
-                            return;
+                    System.out.println("Done with ordering!");
+                    System.out.println("###########################################################");
+                    System.out.println("No. of items ordered: " + (orderCounter++));
+                    if (orderCounter-1 == 0){
+                        System.out.println("You haven't ordered anything!");
+                        System.out.println("################See You Again. Have a nice day.##################");
                     }
+                    else {
+                        System.out.println("###########################################################");
+                        System.out.println("You have ordered : ");
+                        for (int i = 0; i < orderCounter - 1; i++) {
+                            System.out.println(tim[i]);
+                        }
+                        System.out.println("###########################################################");
+                        System.out.println("Total Price is : " + totalPrice);
+                        System.out.println("1. Continue Checkout Online");
+                        System.out.println("2. Checkout At Counter");
+                        choice = sc.nextInt();
+                        switch (choice) {
+                            case 1:
+                                System.out.println("Welcome to Online Payment");
+                                Wallet wallet = new Wallet();
+                                System.out.println("Enter 10 Digit Card Number : ");
+                                int cn = sc.nextInt();
+                                System.out.println("Enter Month & Year :");
+                                String my = sc.next();
+                                System.out.println("Enter CVV : ");
+                                int cvv = sc.nextInt();
+                                if(cn == wallet.creditCardNumber  && cvv == wallet.cvv){
+                                    if(wallet.balance >= totalPrice){
+                                        wallet.balance -= totalPrice;
+                                        System.out.println("###########################################################");
+                                        System.out.println("Available balance in wallet is : " + wallet.balance);
+                                        System.out.println("Total deducted amount is : " + totalPrice);
+                                        System.out.println("###########################################################");
+                                        System.out.println("Remaining Balance is : " + wallet.balance);
+                                        System.out.println("###########################################################");
+                                        System.out.println("Your order will be ready at pick up counter shortly!");
+                                        System.out.println("Have a nice Day. See you again!");
+                                        return;
+                                    }
+                                    else {
+                                        System.out.println("Insufficient Balance! Try at Counter Payment.");
+                                        System.out.println("###########################################################");
+                                        System.out.println("Thank you!");
+                                        return;
+                                    }
+                                }
+                                else {
+                                    System.out.println("###########################################################");
+                                    System.out.println("Information is incorrect. Try again!");
+                                    System.out.println("Payment Failed! \n");
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Thank you for selecting at counter payment. \n Your order will be ready at pick up counter shortly! \n Your total is : " + totalPrice);
+                                System.out.println("Have a nice Day. See you again!");
+                            default:
+                                return;
+                        }
 
-                    break;
+                        break;
+                    }
 
                 default:
                     System.out.println(" ");
