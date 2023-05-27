@@ -6,12 +6,13 @@ public class User {
     private String postalCode;
    private String password;
 
-    public User(String firstName, String lastName, String email, String phoneNumber, String postalCode) {
+    public User(String firstName, String lastName, String email, String phoneNumber, String postalCode, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.postalCode = postalCode;
+        this.password = password;
     }
 
     // Getter and Setter methods for all private members
@@ -58,10 +59,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", postalCode='" + postalCode + '\'' ;
+        return "\n FirstName='" + firstName + '\n' +
+                " LastName='" + lastName + '\n' +
+                " Email='" + email + '\n' +
+                " PhoneNumber='" + phoneNumber + '\n' +
+                " PostalCode='" + postalCode + '\n' +
+                "password = " + password;
     }
 }
