@@ -2,15 +2,17 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+
         Employee employee1 = new Employee("John", "Smith", 30, 50000, "Amazon");
         Employee employee2 = new Employee("Jane", "Doe", 35, 60000, "Apple");
         Employee employee3 = new Employee("Michael", "Johnson", 28, 40000, "Amazon");
         Employee employee4 = new Employee("Emily", "Davis", 32, 35000, "Google");
         Employee employee5 = new Employee("David", "Wilson", 27, 65000, "Amazon");
 
-        // Create 2 teams
-        Team team1 = new Team("Digital Wallet", "Feature1, Feature2", "Mark", 100000);
-        Team team2 = new Team("Mobile App", "Feature3, Feature4", "Adam", 80000);
+        Date d1= new Date(23, 9, 16);
+        Date d2 = new Date(23,9,20);
+        Team team1 = new Team("Digital Wallet", "Feature1, Feature2", "Mark", 100000,d1);
+        Team team2 = new Team("Mobile App", "Feature3, Feature4", "Adam", 80000,d2);
 
         // Add salaries to employees
         employee1.salary = 50000;
